@@ -395,11 +395,11 @@ h5 {
  }
  
  ::-moz-selection {
-   background-color: black;
+   background-color: #ffa69e;
  }
  
  ::selection {
-   background-color: black;
+   background-color: #ffa69e;
  }
 
  input,
