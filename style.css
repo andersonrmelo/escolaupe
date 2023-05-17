@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+:root {
+    --font-family: 'Inter', sans-serif;
+    --line-height: 1.5;
+    --font-weight: 400;
+    --font-size: 16px;
+    --spacing: 1rem;
+    --typography-spacing-vertical: 1.5rem;
+    --transition: 0.2s ease-in-out;
+    --spacing: 1rem;
+
+}
+  
+@media (min-width: 576px) {
+    :root {
+        --font-size: 17px;
+    }
+}
+@media (min-width: 768px) {
+    :root {
+        --font-size: 18px;
+    }
+}
+@media (min-width: 992px) {
+    :root {
+        --font-size: 19px;
+    }
+}
+@media (min-width: 1200px) {
+    :root {
+        --font-size: 20px;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #ef233c;
+}
+
+small {
+    --font-size: 0.875em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    --font-weight: 700;
+}
+
+h1 {
+    --font-size: 2rem;
+}
+
+h2 {
+    --font-size: 1.75rem;
+}
+
+h3 {
+    --font-size: 1.5rem;
+}
+
+h4 {
+    --font-size: 1.25rem;
+}
+
+h5 {
+    --font-size: 1.125rem;
+}
+
+* {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+::before,
+::after {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+:where(:root) {
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-family: var(--font-family);
+}
+
+/**
+ * Typography
+ */
+ b,
+ strong {
+   font-weight: bolder;
+ }
+ 
+ sub,
+ sup {
+   position: relative;
+   font-size: 0.75em;
+   line-height: 0;
+   vertical-align: baseline;
+ }
+ 
+ sub {
+   bottom: -0.25em;
+ }
+ 
+ sup {
+   top: -0.5em;
+ }
+ 
+ address,
+ blockquote,
+ dl,
+ figure,
+ form,
+ ol,
+ p,
+ pre,
+ table,
+ ul {
+   margin-top: 0;
+   margin-bottom: var(--typography-spacing-vertical);
+   color: var(--color);
+   font-style: normal;
+   font-weight: var(--font-weight);
+   font-size: var(--font-size);
+ }
+ 
+ a,
+ [role=link] {
+   outline: none;
+   background-color: var(--background-color);
+   -webkit-text-decoration: var(--text-decoration);
+   text-decoration: var(--text-decoration);
+   transition: background-color var(--transition), color var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
+   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
+   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
+ }
+ a:is([aria-current], :hover, :active, :focus),
+ [role=link]:is([aria-current], :hover, :active, :focus) {
+   --text-decoration: underline;
+ }
+ a:focus,
+ [role=link]:focus {
+   --background-color: var(--primary-focus);
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin-top: 0;
+   margin-bottom: var(--typography-spacing-vertical);
+   color: var(--color);
+   font-weight: var(--font-weight);
+   font-size: var(--font-size);
+   font-family: var(--font-family);
+ }
+ 
+ h1 {
+   --color: var(--h1-color);
+ }
+ 
+ h2 {
+   --color: var(--h2-color);
+ }
+ 
+ h3 {
+   --color: var(--h3-color);
+ }
+ 
+ h4 {
+   --color: var(--h4-color);
+ }
+ 
+ h5 {
+   --color: var(--h5-color);
+ }
+ 
+ h6 {
+   --color: var(--h6-color);
+ }
+ 
+ :where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+   margin-top: var(--typography-spacing-vertical);
+ }
+ 
+ hgroup {
+   margin-bottom: var(--typography-spacing-vertical);
+ }
+ hgroup > * {
+   margin-bottom: 0;
+ }
+ hgroup > *:last-child {
+   --color: var(--muted-color);
+   --font-weight: unset;
+   font-size: 1rem;
+   font-family: unset;
+ }
+ 
+ p {
+   margin-bottom: var(--typography-spacing-vertical);
+ }
+ 
+ small {
+   font-size: var(--font-size);
+ }
+ 
+ :where(dl, ol, ul) {
+   padding-right: 0;
+   padding-left: var(--spacing);
+   -webkit-padding-start: var(--spacing);
+   padding-inline-start: var(--spacing);
+   -webkit-padding-end: 0;
+   padding-inline-end: 0;
+ }
+ :where(dl, ol, ul) li {
+   margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+ }
+ 
+ :where(dl, ol, ul) :is(dl, ol, ul) {
+   margin: 0;
+   margin-top: calc(var(--typography-spacing-vertical) * 0.25);
+ }
+ 
+ ul li {
+   list-style: square;
+ }
+ 
+ mark {
+   padding: 0.125rem 0.25rem;
+   background-color: #ffa69e;
+   color: #780000;
+   vertical-align: baseline;
+ }
+ 
+ blockquote {
+   display: block;
+   margin: var(--typography-spacing-vertical) 0;
+   padding: var(--spacing);
+   border-right: none;
+   border-left: 0.25rem solid var(--blockquote-border-color);
+   -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
+   border-inline-start: 0.25rem solid var(--blockquote-border-color);
+   -webkit-border-end: none;
+   border-inline-end: none;
+ }
+ blockquote footer {
+   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
+   color: var(--blockquote-footer-color);
+ }
+ 
+ abbr[title] {
+   border-bottom: 1px dotted;
+   text-decoration: none;
+   cursor: help;
+ }
+ 
+ ins {
+   color: var(--ins-color);
+   text-decoration: none;
+ }
+ 
+ del {
+   color: var(--del-color);
+ }
+ 
+ ::-moz-selection {
+   background-color: var(--primary-focus);
+ }
+ 
+ ::selection {
+   background-color: var(--primary-focus);
+ }
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 60px;
+    border-bottom: 1px solid #ced4da;
+}
+
+main {
+    padding: 32px;
+}
+
